@@ -119,7 +119,7 @@ function removeItem(arr, str){
 // !!!!!! #11 Write a function  called doubleTheFun that takes 1 parameter. It should double numbers, and
 // repeats strings. example 4->8, 2.5->5, 'Awesome'->'AwesomeAwesome'
  function doubleTheFun(param){
-	 if(typeof(param * 1) === "number"){
+	 if(typeof (param) === "number"){
 	   console.log(param);
 	   return (+param) + (+param);
 	 } else {
@@ -135,9 +135,7 @@ function removeItem(arr, str){
 
 
 function getValueOfProperty(obj, property){
-	for(var i in obj){
-		return i;
-	}
+	return obj[property];
 }
 
 
