@@ -218,7 +218,7 @@ function callerBack(cb, str){
 }
 
 function holla(back){
-  return str;
+  return back;
 }
 
 
