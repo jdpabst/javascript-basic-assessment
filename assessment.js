@@ -117,13 +117,16 @@ function removeItem(arr, str){
 	return arr;
 }
 
-// !!! #11 Write a function  called doubleTheFun that takes 1 parameter. It should double numbers, and
+// #11 Write a function  called doubleTheFun that takes 1 parameter. It should double numbers, and
 // repeats strings. example 4->8, 2.5->5, 'Awesome'->'AwesomeAwesome'
+
  function doubleTheFun(param){
 	// need to account for strings, numbers, and numbers in strings(they need to be treated like numbers)...
+	// isNaN -->  determines whether or not a value is NaN or not. True if the given number is NaN, false if it IS a number. Numbers inside of strings are coerced to be strings with this function. //
 	if(isNaN(param)){
-	  	return param + param
-	} else if(typeof(parseInt(param)) === 'number'){
+		  return param + param;
+	  // since the 'if' statement already filters out the numbers contained inside a string, I can use 'parseFloat': The parseFloat() function parses a string argument and returns a floating point number. This will un-stringify my stringed numbers, it doesn't seem to affect my regular numbers. It also takes into consideration decimal points, which I needed to pass the Jasmine test.
+	} else {
 	  return parseFloat(param) + parseFloat(param); 
 	} 
  }
@@ -132,14 +135,25 @@ function removeItem(arr, str){
 // !!! #12 Write function getValueOfProperty that takes in an object, and the name of a property on the object
 // return the value from the object that corresponds to the property
 
+// var person = {
+//   name: 'Jane',
+//   color: 'Lime',
+//   food: 'Pizza'
+// }; : TESTING PURPOSES
+
+
 function getValueOfProperty(obj, prop){
-  for(var i in obj){
-    if(i === prop){
-      return obj[i];
+  // console.log(obj); // receiving the object
+  // console.log(prop); // receiving the prop
+  for(var i in obj){ //  going through the object and getting the keys //
+    if(i === prop){  // i gives the key name //
+      return obj[i]; // obj[i] gives the value of the key //
     }
   }
 	
 }
+
+// getValueOfProperty(person, 'color'); : TESTING PURPOSES //
 
 //#13 Write a function called makeChatMessage that takes in a message and author as parameters
 // and returns an object with a message, author, and timestamp, that is
@@ -196,12 +210,15 @@ function outside(temp, humid, clouds){
 // !!! #16 Create a function called callerBack that takes in a function (holla) and a string parameter(back) and invokes it(holla) with the argument string(back) + ' back'."
 // example - If I call you with 'Give it' you should invoke holla with 'Give it back'
 
-function callerBack(holla, back){
-  return holla(back + ' back');
+
+// This doesn't seem like it would be a real scenerio for a use case of a callback... wouldn't I want the callback to contain the 'back + ' back'' portion? rather than passing the whole thing? It seems like the callback is pretty useless other than to return the str provided...
+
+function callerBack(cb, str){
+  return cb(str + ' back');
 }
 
-function holla(str){
-  return str + ' back';
+function holla(back){
+  return str;
 }
 
 
