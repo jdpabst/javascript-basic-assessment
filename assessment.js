@@ -207,18 +207,11 @@ function outside(temp, humid, clouds){
   }
 }
 
-// !!! #16 Create a function called callerBack that takes in a function (holla) and a string parameter(back) and invokes it(holla) with the argument string(back) + ' back'."
+// #16 Create a function called callerBack that takes in a function (holla) and a string parameter(back) and invokes it(holla) with the argument string(back) + ' back'."
 // example - If I call you with 'Give it' you should invoke holla with 'Give it back'
-
-
-// This doesn't seem like it would be a real scenerio for a use case of a callback... wouldn't I want the callback to contain the 'back + ' back'' portion? rather than passing the whole thing? It seems like the callback is pretty useless other than to return the str provided...
 
 function callerBack(cb, str){
   return cb(str + ' back');
-}
-
-function holla(back){
-  return back;
 }
 
 
